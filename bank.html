@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التبرع بالبطاقة البنكية</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* يجعل الصفحة تأخذ 100% من ارتفاع الشاشة */
+            background-image: url('https://trend.m7et.com/wp-content/uploads/2024/03/%D8%AE%D8%B7%D9%88%D8%B1%D8%A9-%D9%85%D8%B9%D8%B1%D9%81%D8%A9-%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%81%D9%8A%D8%B2%D8%A7-2.jpg'); /* استبدل بمسار الصورة */
+            background-size: cover; /* تجعل الصورة تغطي كامل الشاشة */
+            background-position: center; /* تمركز الصورة في المنتصف */
+            background-repeat: no-repeat; /* لا تتكرر الصورة */
+            color: rgb(2, 2, 2);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: rgb(51, 255, 0); /* لون عنوان h1 */
+            font-size: 4em; /* حجم الخط */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* ظل للنص */
+            background-color: rgba(255, 255, 255, 0.7); /* خلفية مع شفافية */
+            padding: 10px; /* padding للنص */
+            border-radius: 10px; /* زوايا دائرية */
+        }
+        img {
+            width: 450px; /* حجم صورة فيزا */
+        }
+        .iban {
+            font-size: 2em; /* حجم أكبر لرقم الأيبان */
+            margin: 20px 0;
+            padding: 10px;
+            border: 5px solid red;
+            display: inline-block;
+            cursor: pointer; /* يشير إلى إمكانية النسخ */
+            color: white; /* لون النص لرقم الأيبان */
+            background-color: rgba(0, 0, 0, 0.7); /* لون التعبئة مع شفافية */
+            border-radius: 1%; /* زوايا دائرية */
+        }
+        small {
+            color:rgb(237, 236, 241) ; /* لون النص الصغير */
+            font-size: 2em; /* زيادة حجم النص الصغير */
+            background-color: rgba(26, 27, 27, 0.568); /* خلفية مع شفافية للنص */
+            padding: 5px; /* padding للنص الصغير */
+            border-radius: 5px; /* زوايا دائرية */
+        }
+        .custom-label {
+            font-size: 2em; /* حجم أكبر لتسمية رقم الأيبان */
+            color: rgb(51, 255, 0); /* لون مخصص للتسمية */
+            background-color: rgba(66, 63, 63, 0.7); /* خلفية مع شفافية للتسمية */
+            padding: 5px; /* padding للتسمية */
+            border-radius: 5px; /* زوايا دائرية */
+        }
+    </style>
+    <script>
+        function copyIBAN() {
+            const iban = document.getElementById("iban");
+            navigator.clipboard.writeText(iban.innerText).then(() => {
+                alert("تم نسخ رقم الأيبان بنجاح!");
+            }, () => {
+                alert("فشل في نسخ رقم الأيبان.");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>التبرع بالبطاقة البنكية</h1>
+   
+    <div>
+        <label for="iban" class="custom-label"> : الخاص بنا IPAN رقم</label><br>
+        <div id="iban" class="iban" onclick="copyIBAN()">PS37PALS045441106690013100000</div><br>
+        <small>اضغط على الرقم لنسخه</small> <!-- تم زيادة حجم الخط هنا -->
+    </div>
+</body>
+</html>

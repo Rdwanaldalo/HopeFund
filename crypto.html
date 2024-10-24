@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التبرع بالعملات الرقمية</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz3O5mel9E9A2qHaDZkcJwDnV_xMi39qzxaQ&s'); /* استبدل بمسار الصورة */
+            background-size: cover; /* تجعل الصورة تغطي كامل الشاشة */
+            background-position: center; /* تمركز الصورة في المنتصف */
+            background-repeat: no-repeat; /* لا تتكرر الصورة */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.7); /* خلفية سوداء شبه شفافة للعنوان */
+            padding: 10px; /* إضافة مساحة داخلية حول النص */
+            display: inline-block; /* يجعل الخلفية تغطي النص فقط */
+        }
+
+        .intro-text {
+            font-size: 1.5em;
+            background-color: rgba(14, 13, 13, 0.5); /* خلفية سوداء شبه شفافة للنص */
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .wallet-address {
+            cursor: pointer; /* يشير إلى إمكانية النسخ */
+            color: wheat; /* لون مختلف لكود المحفظة */
+            text-decoration: underline; /* إضافة خط تحت النص */
+            background-color: green; /* خلفية خضراء لكود المحفظة */
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .copy-text {
+            font-size: 1.2em;
+            background-color: black; /* خلفية بيضاء شبه شفافة */
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        img {
+            width: 300px; /* حجم صورة QR */
+        }
+    </style>
+    <script>
+        function copyWalletAddress() {
+            const walletAddress = document.getElementById("walletAddress");
+            navigator.clipboard.writeText(walletAddress.innerText).then(() => {
+                alert("تم نسخ كود المحفظة بنجاح!");
+            }, () => {
+                alert("فشل في نسخ كود المحفظة.");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>التبرع بالعملات الرقمية</h1>
+    <div>
+        <p class="intro-text">استخدم الكود الخاص بنا:</p><br>
+        <p id="walletAddress" class="wallet-address" onclick="copyWalletAddress()">TUHMUm2PrkEviqhmYocUw1da4khEtJcc4c</p>
+        <p class="copy-text">اضغط على الكود للنسخ</p>
+        <br>
+        <img src="file:///C:/Users/MSI/Downloads/WhatsApp%20Image%202024-10-24%20at%201.52.30%20PM.jpeg" alt="QR Code" width="300" height="250"><br> <!-- ضع رابط صورة QR هنا -->
+    </div>
+</body>
+</html>
